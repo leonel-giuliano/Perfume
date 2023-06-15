@@ -1,0 +1,149 @@
+:root {
+    --clr-pr-button: 158, 36%, 37%;
+    --clr-pr-button-hover: 156, 42%, 18%;
+    --clr-pr-background: 30, 38%, 92%;
+
+    --clr-ne-tittle: 212, 21%, 14%;
+    --clr-ne-p: 228, 12%, 48%;
+    --clr-ne-information-background: 0, 0%, 100%;
+
+    --fs-p: 14px;
+
+    --ff-p: 'Montserrat', sans-serif;
+    --fw-p-regular: 500;
+    --fw-p-bold: 700;
+
+    --ff-tittle: 'Fraunces', serif;
+    --fw-tittle-bold: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    font-weight: 100 900;
+    src: local('Montserrat Thin'),
+        url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf),
+        format('ttf');
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    font-display: swap;
+    font-weight: 100 900;
+    src: local('Fraunces 9pt Black'),
+        url(fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf),
+        format('ttf');
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: var(--ff-p);
+    font-size: var(--fs-p);
+    background-color: hsla(var(--clr-pr-background));
+    color: hsla(var(--clr-ne-p));
+}
+
+main {
+    display: grid;
+    place-items: center;
+    grid-template-rows: calc(241 * 100% / 613);
+    width: min(calc(342 * 100% / 375), 45ch);
+    height: calc(613 * 100% / 667);
+    background-color: hsla(var(--clr-ne-information-background));
+    overflow: hidden;
+    border-radius: 1.25rem;
+}
+
+.perfume-container {
+    width: 100%;
+    height: 100%;
+}
+
+.perfume-desktop { display: none; }
+
+.perfume-mobile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.information {
+    display: grid;
+    align-items: center;
+    width: 85%;
+    height: 100%;
+}
+
+.perfume {
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+
+.perfume-tittle {
+    font-family: var(--ff-tittle);
+    font-size: 2rem;
+    color: hsla(var(--clr-ne-tittle));
+}
+
+.about { line-height: 1.5rem; }
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.price span {
+    margin-right: 1.5rem;
+    font-family: var(--ff-tittle);
+    font-size: 2rem;
+    color: hsla(var(--clr-pr-button));
+}
+
+.information button {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    font-weight: var(--fw-p-bold);
+    color: hsla(var(--clr-ne-information-background));
+    background-color: hsla(var(--clr-pr-button));
+    border: none;
+    border-radius: 1rem;
+    transition: background-color .175s ease-in;
+}
+
+button img { margin-right: .75rem; }
+
+.attribution {
+    position: absolute;
+    top: 0;
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        display: flex;
+        width: min(90%, 605px);
+        height: min(90%, 455px);        
+    }
+
+    .perfume-container { flex-basis: 1fr; }
+
+    .perfume-desktop {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .perfume-mobile { display: none;}
+
+    .information {
+        width: 100%;
+        padding: 0 1.5rem;
+    }
+
+    .information button:hover {
+        background-color: hsla(var(--clr-pr-button-hover));
+    }
+}
