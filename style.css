@@ -75,6 +75,7 @@ main {
     align-items: center;
     width: 85%;
     height: 100%;
+    text-wrap: balance;
 }
 
 .perfume {
